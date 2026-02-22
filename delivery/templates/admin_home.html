@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard | Servora</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/CSS/admin_home.css">
+
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div>
+            <div class="logo">Servora</div>
+
+            <div class="nav-links">
+                <a href="{% url 'add_restaurant' %}">➕ Add Restaurant</a>
+                <a href="{% url 'show_restaurant' %}">🏬 View Restaurants</a>
+                
+            </div>
+        </div>
+
+        <a href="{% url 'signin' %}" class="logout">Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <div class="top-bar">
+            <h1>Admin Dashboard</h1>
+            <div class="admin-profile">Admin User</div>
+        </div>
+
+      <div class="cards">
+    <div class="card">
+        <h3>Total Restaurants</h3>
+        <p>{{ total_restaurants }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Total Orders</h3>
+        <p>{{ total_orders }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Revenue</h3>
+        <p>₹{{ total_revenue }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Active Users</h3>
+        <p>{{ active_users }}</p>
+    </div>
+</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Servora | Restaurant Directory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../static/CSS/show_restaurant.css">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>🍽️ Servora</h2>
+    <a href="{% url 'dashboard' %}">Dashboard</a>
+    <a href="{% url 'add_restaurant' %}">Add Restaurant</a>
+    <a href="{% url 'show_restaurant' %}">Restaurants</a>
+    <a href="{% url 'signin' %}">Logout</a>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+    <div class="topbar">
+        <h1>Restaurant Directory</h1>
+    </div>
+
+    <!--<a href="{% url 'add_restaurant' %}" class="add-btn">➕ Add Restaurant</a> -->
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Cuisine</th>
+                    <th>Rating</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for r in restaurants %}
+                <tr>
+                    <td>{{ r.id }}</td>
+                    <td><strong>{{ r.name }}</strong></td>
+
+
+                    <td>
+                        {% if r.image %}
+                            <img src="{{ r.image.url }}">
+                        {% elif r.image_url %}
+                            <img src="{{ r.image_url }}">
+                        {% else %}
+                            No Image
+                        {% endif %}
+                    </td>
+
+                    <td>
+                        <span class="badge badge-cuisine">{{ r.cuisine }}</span>
+                    </td>
+
+                    <td>
+                        <span class="badge badge-rating">⭐ {{ r.rating }}</span>
+                    </td>
+                    <td>
+
+    <!-- View Menu -->
+    <a href="{% url 'view_restaurant' r.id %}" class="btn-view">
+    View
+</a>
+
+    <!-- Update Info -->
+    <a href="{% url 'update_restaurant' r.id %}" class="btn-edit">
+        Update
+    </a>
+
+    <!-- Remove -->
+    <a href="{% url 'delete_restaurant' r.id %}"
+       class="btn-delete"
+       onclick="return confirm('Are you sure you want to delete this restaurant?');">
+       Remove
+    </a>
+
+</td>
+
+                   
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6" class="empty">
+                        No restaurants available
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ restaurant.name }} | Menu</title>
+    <link rel="stylesheet" href="{% static 'css/customer_menu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+
+<body>
+
+<div class="header">
+
+    <a href="{% url 'customer_home' %}" class="back-btn">← Back</a>
+    <h1>{{ restaurant.name }}</h1>
+</div><div class="header">
+    <div class="left-section">
+        <a href="{% url 'customer_home' %}" class="back-btn">← Back</a>
+        <a href="{% url 'cart_view' %}" class="cart-btn">🛒 My Cart</a>
+    </div>
+
+    <h1>{{ restaurant.name }}</h1>
+</div>
+
+<div class="menu-grid">
+    {% for item in menu_items %}
+    <div class="menu-card">
+
+        {% if item.image %}
+            <img src="{{ item.image.url }}">
+        {% else %}
+            <img src="https://via.placeholder.com/250x150?text=No+Image">
+        {% endif %}
+
+        <div class="menu-info">
+            <h3>{{ item.name }}</h3>
+            <p class="price">₹ {{ item.price }}</p>
+
+            {% if item.description %}
+                <p class="desc">{{ item.description }}</p>
+            {% endif %}
+
+            <button class="order-btn">Add to Cart</button>
+        </div>
+
+    </div>
+    {% empty %}
+        <p>No items available.</p>
+    {% endfor %}
+</div>
+
+</body>
+</html>

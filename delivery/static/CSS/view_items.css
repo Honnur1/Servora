@@ -1,0 +1,119 @@
+/* ===== GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fb;
+    padding: 50px 120px;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    background: white;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== HEADING ===== */
+h2 {
+    margin-bottom: 25px;
+    font-size: 26px;
+    font-weight: 600;
+    color: #ff6b00;
+}
+
+/* ===== TABLE WRAPPER ===== */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+/* ===== TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+/* ===== TABLE HEADER ===== */
+thead {
+    background: linear-gradient(to right, #ff6b00, #ff8c42);
+    color: white;
+}
+
+th {
+    padding: 14px;
+    font-weight: 500;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+/* ===== TABLE BODY ===== */
+td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 14px;
+}
+
+/* Row hover effect */
+tbody tr {
+    transition: 0.3s ease;
+}
+
+tbody tr:hover {
+    background: #fff5ec;
+    transform: scale(1.01);
+}
+
+/* ===== IMAGE STYLE ===== */
+td img {
+    width: 90px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== ADD TO CART BUTTON ===== */
+.btn-order {
+    padding: 7px 16px;
+    background: #ff6b00;
+    border: none;
+    color: white;
+    font-size: 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: 500;
+}
+
+.btn-order:hover {
+    background: #e65c00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 107, 0, 0.4);
+}
+
+/* ===== EMPTY ROW ===== */
+tbody tr td[colspan] {
+    padding: 25px;
+    color: #888;
+    font-style: italic;
+}
+
+/* ===== BACK BUTTON ===== */
+a {
+    text-decoration: none;
+    color: #ff6b00;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    color: #e65c00;
+}

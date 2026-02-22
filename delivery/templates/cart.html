@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Cart | Servora</title>
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Your Cart 🛒</h2>
+
+    {% if cart %}
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key, item in cart.items %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>₹ {{ item.price }}</td>
+
+                <td>
+                    <a href="{% url 'decrease_qty' key %}" class="qty-btn">−</a>
+                    <span class="qty-number">{{ item.quantity }}</span>
+                    <a href="{% url 'increase_qty' key %}" class="qty-btn">+</a>
+                </td>
+
+                <td>₹ {{ item.subtotal }}</td>
+
+                <td>
+                    <a href="{% url 'remove_from_cart' key %}" class="remove-btn">
+                        Remove
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Grand Total -->
+    <div class="total">
+        Total Amount: ₹ {{ total_price }}
+    </div>
+
+    <!-- 💳 Payment Button -->
+    <div class="payment-section">
+        <a href="{% url 'payment_page' %}" class="checkout-btn">
+            💳 Proceed to Pay
+        </a>
+    </div>
+
+    {% else %}
+        <p>Your cart is empty.</p>
+    {% endif %}
+
+    <br>
+    <a href="{% url 'customer_home' %}">← Continue Shopping</a>
+
+</div>
+
+</body>
+</html>

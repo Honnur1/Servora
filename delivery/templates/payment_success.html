@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Success | Servora</title>
+
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    
+</head>
+<body>
+
+<div class="success-box">
+    <div class="success">✔</div>
+    <h2>Thank You {{ customer.username }}!</h2>
+    <p>Your order has been placed successfully.</p>
+
+    <p><strong>Order ID:</strong> {{ order.id }}</p>
+    <p><strong>Total Amount:</strong> ₹{{ order.total_price }}</p>
+
+    <button onclick="window.location.href='/customer_home/'">
+        Back to Home
+    </button>
+</div>
+
+</body>
+</html>

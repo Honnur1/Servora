@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Servora | Discover</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/customer_home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<!-- HEADER -->
+<div class="header">
+    <div class="left-header">
+        <div class="logo">🍽 Servora</div>
+        <a href="{% url 'index' %}" class="home-btn">🏠 Home</a>
+        <a href="{% url 'signin' %}" class="home-btn">Back</a>
+    </div>
+
+    <div class="welcome">
+        Welcome, {{ customer }} 👋
+    </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Discover the Best Food Near You</h1>
+    <p>Fresh meals from top-rated restaurants</p>
+</div>
+
+<!-- RESTAURANTS -->
+<div class="section">
+    <div class="section-header">
+        <h2>Available Restaurants</h2>
+        <a href="{% url 'cart_view' %}" class="cart-btn">
+            🛒 My Cart
+        </a>
+    </div>
+
+    <div class="restaurant-grid">
+        {% for r in restaurants %}
+        <div class="card">
+
+            {% if r.image %}
+                <img src="{{ r.image.url }}">
+            {% elif r.image_url %}
+                <img src="{{ r.image_url }}">
+            {% else %}
+                <img src="https://via.placeholder.com/300x200">
+            {% endif %}
+
+            <div class="card-content">
+                <h3>{{ r.name }}</h3>
+                <p>{{ r.cuisine }}</p>
+                <span class="rating">⭐ {{ r.rating }}</span>
+
+                <a href="{% url 'customer_menu' r.id %}" class="view-btn">
+                    View Menu
+                </a>
+            </div>
+        </div>
+        {% empty %}
+            <p>No restaurants available.</p>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>

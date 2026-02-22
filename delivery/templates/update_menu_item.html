@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Food Item | Servora</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="{% static 'css/update_menu_item.css' %}">
+ <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    
+</head>
+<body>
+
+<div class="card">
+
+    <h2>Update Food Item</h2>
+
+    <!-- Image Preview -->
+    <div class="image-preview">
+        {% if item.image and item.image.name %}
+            <img src="{{ item.image.url }}">
+        {% elif item.image_url %}
+            <img src="{{ item.image_url }}">
+        {% else %}
+            <img src="https://via.placeholder.com/140x90?text=No+Image">
+        {% endif %}
+    </div>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <label>Food Name</label>
+        <input type="text" name="name" value="{{ item.name }}" required>
+
+        <label>Description</label>
+        <textarea name="description">{{ item.description }}</textarea>
+
+        <label>Price</label>
+        <input type="number" step="0.01" name="price" value="{{ item.price }}" required>
+
+        <label>Change Image (From Device)</label>
+        <input type="file" name="image">
+
+        <label>OR Change Image URL</label>
+        <input type="url" name="image_url" value="{{ item.image_url }}">
+
+        <button type="submit">Save Changes</button>
+    </form>
+
+    <a href="{% url 'view_restaurant' item.restaurant.id %}" class="back">
+        ← Back to Menu
+    </a>
+
+</div>
+
+</body>
+</html>

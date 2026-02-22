@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url("https://images.unsplash.com/photo-1504674900247-0877df9cc836")
+        center/cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* SIGNUP CARD */
+.signup-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 45px;
+    border-radius: 20px;
+    width: 400px;
+    color: #111827;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    animation: fadeUp 1s ease;
+}
+
+/* BRAND */
+.brand-name {
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: #ff6b00;
+    font-weight: 700;
+}
+
+/* TITLE */
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.9rem;
+    color: #111827;
+}
+
+/* INPUT GROUP */
+.input-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    outline: none;
+    font-size: 0.95rem;
+    background: #f9fafb;
+    transition: 0.3s;
+}
+
+textarea {
+    resize: none;
+}
+
+input:focus, textarea:focus {
+    border-color: #ff6b00;
+    box-shadow: 0 0 0 3px rgba(255,107,0,0.15);
+}
+
+/* PASSWORD TOGGLE */
+.password-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 38px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #ff6b00;
+}
+
+/* SUBMIT BUTTON */
+.submit-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 14px;
+    border-radius: 30px;
+    border: none;
+    background: #ff6b00;
+    color: white;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #e65c00;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255,107,0,0.3);
+}
+
+/* ERROR BOX */
+.error-box {
+    background: #ef4444;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: white;
+}
+
+/* LINKS */
+.extra-links {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.extra-links a {
+    color: #ff6b00;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.extra-links a:hover {
+    text-decoration: underline;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

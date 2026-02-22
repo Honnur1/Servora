@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Restaurant</title>
+
+<link rel="stylesheet" href="../static/CSS/add_restaurant.css">
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+</head>
+<body>
+
+<div class="container">
+    <h1>Add Restaurant</h1>
+
+    <form method="post" action="{% url 'add_restaurant' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <label>Restaurant Name</label>
+        <input type="text" name="name" required>
+
+        <label>Picture URL (Optional)</label>
+        <input type="url" name="image_url" placeholder="https://example.com/image.jpg">
+
+        <p style="text-align:center; font-weight:bold; margin:10px 0;">OR</p>
+
+        <form method="POST" enctype="multipart/form-data">
+
+
+        <label>Upload Image from Device (Optional)</label>
+        <input type="file" name="image" accept="image/*">
+
+        <label>Cuisine</label>
+        <input type="text" name="cuisine">
+
+        <label>Rating</label>
+        <input type="number" name="rating" step="0.1" min="0" max="5">
+
+        <button type="submit">Add Restaurant</button>
+
+        <a href="{% url 'show_restaurant' %}" class="back-link">← Back To Directory</a>
+
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+
+
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f9fa;
+            text-align: center;
+            padding: 100px;
+        }
+
+        .success-box {
+            background: white;
+            padding: 40px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+        }
+
+        .success {
+            font-size: 60px;
+            color: green;
+        }
+
+        button {
+            background: #F37254;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 8px;
+            margin-top: 20px;
+            cursor: pointer;
+        }

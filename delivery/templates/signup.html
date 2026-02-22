@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up | Servora</title>
+
+  <link rel="stylesheet" href="../static/CSS/signup.css">
+
+  <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+
+<body>
+
+    <div class="signup-box">
+
+        <div class="brand-name">SERVORA</div>
+        <h2>Create Account</h2>
+
+        {% if error %}
+        <div class="error-box">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Enter username" required>
+            </div>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Enter email" required>
+            </div>
+
+            <div class="input-group password-wrapper">
+                <label>Password</label>
+                <input type="password" id="password" name="password" placeholder="Create password" required>
+                <span class="toggle-password" onclick="togglePassword()">👁</span>
+            </div>
+
+            <div class="input-group">
+                <label>Mobile Number</label>
+                <input type="tel" name="mobile" placeholder="Enter mobile number" required>
+            </div>
+
+            <div class="input-group">
+                <label>Address</label>
+                <textarea name="address" rows="3" placeholder="Enter address" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Create Account</button>
+        </form>
+
+        <div class="extra-links">
+            Already have an account? <a href="/signin/">Sign In</a>
+        </div>
+
+    </div>
+
+<script>
+function togglePassword() {
+    let pwd = document.getElementById("password");
+    pwd.type = pwd.type === "password" ? "text" : "password";
+}
+</script>
+
+</body>
+</html>

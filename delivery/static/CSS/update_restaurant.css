@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5")
+        center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CARD */
+.card {
+    width: 480px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+    color: #111827;
+}
+
+/* TITLE */
+.card h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 24px;
+    color: #ff6b00;
+    letter-spacing: 0.5px;
+}
+
+/* IMAGE */
+.image-preview {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image-preview img {
+    width: 140px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #ff6b00;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* FORM GROUP */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    outline: none;
+    background: #f9fafb;
+    color: #111827;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.form-group input::placeholder {
+    color: #9ca3af;
+}
+
+.form-group input:focus {
+    border-color: #ff6b00;
+    box-shadow: 0 0 0 3px rgba(255,107,0,0.15);
+}
+
+label {
+    font-size: 13px;
+    margin-bottom: 6px;
+    display: block;
+    font-weight: 600;
+    color: #374151;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 13px;
+    border-radius: 14px;
+    border: none;
+    background: #ff6b00;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #e65c00;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255,107,0,0.3);
+}
+
+/* BACK LINK */
+.back {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #ff6b00;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.back:hover {
+    color: #e65c00;
+}
