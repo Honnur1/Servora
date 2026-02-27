@@ -1,104 +1,91 @@
-# Servora
-Servora is a Django-based food delivery web application with admin dashboard, cart system, Razorpay payment integration, and responsive mobile design.
-🍽️ Servora – Food Delivery Web Application
+Servora – Designed & Built by Honnur M
 
-Servora is a Django-based food delivery web application that allows customers to browse restaurants, add items to cart, and make payments using Razorpay. It also includes an admin dashboard for managing restaurants, menu items, and monitoring revenue.
+🌟 Meaning of “Servora”
+Servora is derived from:
+“Serve” → representing service, hospitality, and customer experience
+“Aura” → representing atmosphere, presence, and digital identity
+So,
+Servora means: “The Digital Aura of Service.”
+It symbolizes a platform that enhances and modernizes the restaurant service experience through technology.
 
-🚀 Features
+🌐 Live Website:
+https://lnkd.in/dNwykaK3
+
+This project was built using Django, SQLite, Gunicorn, and Nginx, and hosted on AWS EC2 for a production-level deployment experience.
+
+☁️ Hosted on AWS – Why It’s Powerful
+Servora is deployed on AWS EC2 with:
+🔹 Nginx as reverse proxy for high performance
+🔹 Gunicorn connected via Unix socket
+🔹 Secure HTTPS configuration
+🔹 Static file handling using production setup
+🔹 Real-time database persistence
+🔹 Scalable cloud infrastructure
+AWS ensures:
+Smooth performance
+Reliable uptime
+Secure server environment
+Real-world deployment architecture
+
+🧠 About the Project – Servora
+Servora is a restaurant management and food ordering web application that allows:
+Admins to manage restaurants and menus
+Customers to explore restaurants and order food
+Multi-user login system
+Persistent database storage
+Role-based functionality
+The system is fully dynamic and production-ready.
+
+👨‍💼 Admin Features
+If you log in as Admin, you can:
+➤ Add new restaurants
+➤ Update restaurant details
+➤ Add menu items (food with price & image)
+➤ Edit or delete menu items
+➤ Manage restaurant listings
+➤ View all platform data in real-time
+Admin controls the entire platform.
+
 👤 Customer Features
+If you log in as Customer, you can:
+➤ Register and login securely
+➤ Browse available restaurants
+➤ View restaurant menus
+➤ Add food items to cart
+➤ Place orders
+➤ Experience smooth UI with responsive design
+Customers see live data added by admin instantly.
 
-When logged in as a Customer, you can:
+💳 Payment Feature (Demo Simulation)
+To explore the payment feature:
+➤ Add any item to the cart
+➤ Proceed to checkout
+➤ Enter debit card details
+➤ An OTP verification step appears
+➤ You can enter any 6-digit OTP for demo purposes
+This simulates a secure payment flow for demonstration and testing.
 
-View all available restaurants
+🛠 Tech Stack
+➤Python
+➤Django
+➤HTML / CSS
+➤SQLite (Production-ready migration possible)
+➤AWS EC2
+➤Nginx
+➤Gunicorn
+➤Linux Server Configuration
 
-View restaurant menu items
+☁️ Deployment Architecture
+Browser
+→ Nginx
+→ Gunicorn (Unix Socket)
+→ Django
+→ SQLite Database
 
-Add items to cart
-
-Increase / decrease quantity
-
-Remove items from cart
-
-Proceed to checkout
-
-Make payment via Razorpay (UPI, Card, Netbanking)
-
-View payment success page with order details
-
-Responsive design for mobile and desktop
-
-🛠️ Admin Features
-
-When logged in as Admin, you can:
-
-View dashboard statistics:
-
-Total Users
-
-Active Users
-
-Total Restaurants
-
-Total Orders
-
-Total Revenue
-
-Today's Revenue
-
-Add new restaurants
-
-Update restaurant details
-
-Delete restaurants
-
-Add menu items to restaurants
-
-Update menu items
-
-Delete menu items
-
-View all restaurants and orders
-
-🔐 Admin Login Credentials
-Username: honey
-Password: Honey
-
-(Used for demo purposes)
-
-💳 Payment Integration
-
-Servora uses Razorpay (Test Mode) for payment processing.
-
-Supported payment methods:
-
-UPI (Google Pay, PhonePe, Paytm UPI – on mobile)
-
-Card
-
-Netbanking
-
-
-🧑‍💻 Technologies Used
-Backend
-
-Python 3.12
-
-Django 6.0.2
-
-Frontend
-
-HTML5
-
-CSS3
-
-Responsive Design (Media Queries)
-
-Database
-
-SQLite (Development)
-
-PostgreSQL (For Deployment)
-
-Payment Gateway
-
-Razorpay
+This project helped me gain practical experience in:
+✔ Cloud deployment
+ ✔ Production server setup
+ ✔ Reverse proxy configuration
+ ✔ Backend architecture
+ ✔ DNS & domain configuration
+ ✔ Role-based authentication systems
